@@ -4,14 +4,15 @@ import './App.css';
 // import IconList from './IconList';
 // import LottoBall from './LottoBall';
 // import Lottery from './Lottery';
-import CoinContainer from './CoinContainer'
+// import CoinContainer from './CoinContainer'
+import BoxContainer from './BoxContainer'
 
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <CoinContainer/>
+        <BoxContainer/>
 
         {/* <Lottery title='Mini Daily' maxNum={10} maxBalls={3} /> */}
       </header>
