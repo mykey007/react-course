@@ -5,6 +5,8 @@ class NumberList extends Component {
   constructor(props) {
     super(props);
     this.state = { nums: [1, 2, 3, 4, 5] };
+    //bind it once and call that in the render
+    this.remove = this.remove.bind(this)
   }
 
   remove(num) {
@@ -15,7 +17,8 @@ class NumberList extends Component {
 
   render() {
     let nums = this.state.nums.map(n => (
-      <NumberItem value={n} remove={() => this.remove(n)} />
+        // pass in the reference to remove as-is, no binding here, no new functions
+      <NumberItem value={n} remove={this.remove} />
     ));
     return (
       <div>
