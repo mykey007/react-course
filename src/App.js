@@ -6,15 +6,16 @@ import './App.css';
 // import Lottery from './Lottery';
 // import CoinContainer from './CoinContainer'
 // import BoxContainer from './BoxContainer'
-import WiseSquare from './WiseSquare'
+// import WiseSquare from './WiseSquare'
 // import CopyDemo from './CopyDemo'
+import ButtonList from './ButtonList'
 
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <WiseSquare/>
+        <ButtonList/>
 
         {/* <Lottery title='Mini Daily' maxNum={10} maxBalls={3} /> */}
       </header>
