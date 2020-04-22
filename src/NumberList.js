@@ -18,7 +18,7 @@ class NumberList extends Component {
   render() {
     let nums = this.state.nums.map(n => (
         // pass in the reference to remove as-is, no binding here, no new functions
-      <NumberItem value={n} remove={this.remove} />
+      <NumberItem key={n} value={n} remove={this.remove} />
     ));
     return (
       <div>
