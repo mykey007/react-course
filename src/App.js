@@ -8,14 +8,15 @@ import './App.css';
 // import BoxContainer from './BoxContainer'
 // import WiseSquare from './WiseSquare'
 // import CopyDemo from './CopyDemo'
-import NumberList from './NumberList'
+// import NumberList from './NumberList'
+import Form from './Form'
 
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <NumberList/>
+        <Form/>
 
         {/* <Lottery title='Mini Daily' maxNum={10} maxBalls={3} /> */}
       </header>
