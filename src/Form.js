@@ -4,12 +4,22 @@ import React, { Component } from 'react'
 class Form extends Component {
     constructor(props){
         super(props)
-        this.state = {username: ''}
+        this.state = {username: '', email: '', password: ''}
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
     }
     handleChange(evt){
-        this.setState({username: evt.target.value})
+        // using names in the inputs lets us take advantage of
+        // es2015 computed properties values - setting things
+        //so we wont just use username anymore, it'll get fancier
+        
+        //this.setState({username: evt.target.value})
+        // into this (notice the square brackets - not an array)
+        this.setState({[evt.target.name]: evt.target.value})
+
+        // all three inputs call the same event handler but it
+        // behaves differently based off of the name of the input itself
+        //reuse this!!!
     }
     handleSubmit(evt){
         // stop page from refreshing
@@ -24,7 +34,27 @@ class Form extends Component {
             <div>
                 <h1>Form Demo</h1>
                 <form onSubmit={this.handleSubmit}>
-                    <input value={this.state.username} onChange={this.handleChange} type="text"/>
+                    <input 
+                        type="text"
+                        name="username"
+                        placeholder="username"
+                        value={this.state.username} 
+                        onChange={this.handleChange} 
+                    />
+                    <input 
+                        type="email"
+                        name="email"
+                        placeholder="email"
+                        value={this.state.email} 
+                        onChange={this.handleChange} 
+                    />
+                    <input 
+                        type="password"
+                        name="password"
+                        placeholder="password"
+                        value={this.state.password} 
+                        onChange={this.handleChange} 
+                    />
                     <button>Feel good presser</button>
                 </form>
             </div>
