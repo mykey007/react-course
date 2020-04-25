@@ -34,22 +34,28 @@ class Form extends Component {
             <div>
                 <h1>Form Demo</h1>
                 <form onSubmit={this.handleSubmit}>
+                    <label htmlFor="username">Username</label>
                     <input 
                         type="text"
+                        id="username"
                         name="username"
                         placeholder="username"
                         value={this.state.username} 
                         onChange={this.handleChange} 
                     />
+                    <label htmlFor="email">Email</label>
                     <input 
                         type="email"
+                        id="email"
                         name="email"
                         placeholder="email"
                         value={this.state.email} 
                         onChange={this.handleChange} 
                     />
+                    <label htmlFor="password">Password</label>
                     <input 
                         type="password"
+                        id="password"
                         name="password"
                         placeholder="password"
                         value={this.state.password} 
