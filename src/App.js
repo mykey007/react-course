@@ -11,14 +11,14 @@ import './App.css';
 // import NumberList from './NumberList'
 // import Form from './Form'
 //import ShoppingList from './ShoppingList'
-import Box2 from './Box2'
+import BoxList from './BoxList'
 
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Box2 height={10} width={10} color="purple" />
+        <BoxList />
       </header>
     </div>
   );
