@@ -10,14 +10,15 @@ import './App.css';
 // import CopyDemo from './CopyDemo'
 // import NumberList from './NumberList'
 // import Form from './Form'
-import ShoppingList from './ShoppingList'
+//import ShoppingList from './ShoppingList'
+import Box2 from './Box2'
 
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <ShoppingList/>
+        <Box2 height={10} width={10} color="purple" />
       </header>
     </div>
   );
