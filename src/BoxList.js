@@ -5,8 +5,15 @@ import NewBoxForm from './NewBoxForm'
 class BoxList extends Component {
     constructor(props){
         super(props)
-        this.state = {boxes: [{width: 10, height: 40, color: 'orange'}]}
+        this.state = {boxes: []}
         this.create = this.create.bind(this)
+    }
+    // remove a box based on id/key
+    remove(id){
+        this.setState({
+            // make a new array containing the boxes who didn't contain the id passed in
+            boxes: this.state.boxes.filter(box => box.id !== id)
+        })
     }
     create(newBox){
         this.setState({
@@ -16,14 +23,18 @@ class BoxList extends Component {
     render() {
         const boxes = this.state.boxes.map(box => (
             <Box2 
+            key={box.id}
+            id={box.id}
             width={box.width}
             height={box.height}
             color={box.color}
+            removeBox={() => this.remove(box.id)}
             />
         ))
         return (
             <div>
                 <h1>Color Box Maker Thing</h1>
+                {/* bound in the components and passed down  */}
                 <NewBoxForm createBox={this.create} />
                 {boxes}
             </div>

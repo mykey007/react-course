@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {v4 as uuid} from 'uuid'
 
 class NewBoxForm extends Component {
     constructor(props){
@@ -18,6 +19,9 @@ class NewBoxForm extends Component {
         e.preventDefault()
         // get entire state
         this.props.createBox(this.state)
+        // create unique id to keep track of boxes
+        const newBox = {...this.state, id: uuid()}
+        this.props.createBox(newBox)
         // clear the fields once submitted
         this.setState({
             height: '',
