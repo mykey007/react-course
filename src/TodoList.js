@@ -4,8 +4,9 @@ import NewTodoForm from './NewTodoForm'
 class TodoList extends Component {
     constructor(props) {
         super(props)
-        this.state = {todos: [{task: "Add the numbers"},{task: "Water the Buffalo"}]}
+        this.state = {todos: []}
         this.create = this.create.bind(this)
+        this.remove = this.remove.bind(this)
     }
     // add method to add the list item into state and list
     create(newTodo) {
@@ -14,9 +15,15 @@ class TodoList extends Component {
             todos: [...this.state.todos, newTodo]
         })
     }
+    remove(id) {
+        this.setState({
+            // make sure the passed-in id doesnt equal the uuid id
+            todos: this.state.todos.filter(t => t.id !== id)
+        })
+    }
     render() {
         const todos = this.state.todos.map(todo => {
-            return <Todo task={todo.task} />
+            return <Todo key={todo.id} id={todo.id} task={todo.task} removeTodo={this.remove} />
         })
         return (
             <div className='Ball'>
